@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Calculator</title>
+<script>
+var num1 = "";
+var num2 = "";
+var operator = "";
+var result = "";
+
+function display(value) {
+  if (operator == "") {
+    num1 += value;
+    document.getElementById("screen").innerHTML = num1;
+  } else {
+    num2 += value;
+    document.getElementById("screen").innerHTML = num1 + " " + operator + " " + num2;
+  }
+}
+
+function setOperator(value) {
+  operator = value;
+  document.getElementById("screen").innerHTML = num1 + " " + operator;
+}
+
+function calculate() {
+  var n1 = parseFloat(num1);
+  var n2 = parseFloat(num2);
+  
+  if (operator == "+") {
+    result = n1 + n2;
+  } else if (operator == "-") {
+    result = n1 - n2;
+  } else if (operator == "*") {
+    result = n1 * n2;
+  } else if (operator == "/") {
+    result = n1 / n2;
+  }
+  
+  document.getElementById("screen").innerHTML = result;
+  num1 = result.toString();
+  num2 = "";
+  operator = "";
+  result = "";
+}
+
+function clearScreen() {
+  num1 = "";
+  num2 = "";
+  operator = "";
+  result = "";
+  document.getElementById("screen").innerHTML = "0";
+}
+</script>
+</head>
+<body>
+  <h1>Calculator</h1>
+  <div id="screen">0</div>
+  <button onclick="display('7')">7</button>
+  <button onclick="display('8')">8</button>
+  <button onclick="display('9')">9</button>
+  <button onclick="setOperator('+')">+</button>
+  <br>
+  <button onclick="display('4')">4</button>
+  <button onclick="display('5')">5</button>
+  <button onclick="calculate()">=</button>
+  </body>
+  </html>

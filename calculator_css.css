@@ -1,0 +1,79 @@
+/* html{
+    overflow: hidden;
+} */
+*{
+    background-color: skyblue;
+    margin: 0;
+    padding: .2em;
+    font-size: x-large;
+}
+
+#main{
+    position: absolute;
+    left: 28%;
+    background-color: lightblue;
+    text-align: center;
+    border: .2em solid darkblue;
+    width: 42%;
+    height: 92%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 0.4em;
+    border-radius: 1em;
+}
+.showD{
+    /* width: auto;
+    height: auto; */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: 	darkcyan;
+    grid-area: 1 / 1 / span 1 / span 4;
+    display:flex;
+    border-radius: 1em;
+    align-items: center;
+    justify-content: center;
+    border: .2em solid black;
+}
+.display{
+    background-color: darkcyan;
+}
+button{
+    min-width: 8vw;
+    background-color: whitesmoke;
+    border: .01em solid blue;
+    transition: background-color .3s;
+    border-radius: .5em;
+}
+.clear{
+    grid-area: 2/1/span 1/span 2;
+}
+.zero{
+    grid-area: 6/1/span 1/span 2;
+}
+button:hover{
+    background: lightgray;
+    border-color: red;
+}
+
+.clear:hover,.del:hover{
+    background-color: salmon;
+}
+.equalkey{
+    background-color: orange;
+    transition: background-color .3s;
+}
+.equalkey:hover{
+    background-color: limegreen;
+}
+.zero:hover{
+    background-color: salmon;
+}
+.operkey{
+    background-color: gold;
+    transition: background-color .3s;
+}
+.operkey:hover{
+    background-color: yellowgreen;
+}
